@@ -4,53 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - Nadya</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar Section -->
-    <nav class="navbar">
-        <div class="logo">
-            <h1>NADYA</h1>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>NADYA</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="hobby.html">Hobby</a></li>
+                        <li><a href="portofolio.html">Portofolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="nav-links">
-            <ul>
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="hobby.html">Hobby</a></li>
-                <li><a href="portofolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h2>My awesome portfolio</h2>
-            <p>Creative designer specializing in branding and visual marketing</p>
-        </div>
-        <div class="hero-frame">
-            <div class="profile-image"></div>
-                <img src="img/home.png" alt="hiasan">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>My awesome portfolio</h2>
+                </div>
+                <div class="hero-graphics">
+                    <div class="circle circle-green"></div>
+                    <div class="circle circle-yellow">
+                        <div class="sun-rays"></div>
+                    </div>
+                    <div class="circle circle-small">
+                        <div class="star-shape"></div>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
 
     <!-- Bio Section -->
     <section class="bio">
-        <div class="bio-container">
-            <div class="profile-image">
-                <img src="img/Gambar WhatsApp 2025-05-13 pukul 23.13.23_bcca6120.jpg" alt="profile photo">
-            </div>
-            <div class="bio-text">
-                <h3>Bio:</h3>
-                <p>
-                    I am a designer started with a strong interest in graphic design. Since the beginning of my studies, I have been actively developing my skills in branding and visual marketing. I am currently working on design projects for the fashion business group, always combining creativity with business strategy.
-                </p>
-                <div class="bio-info">
-                    <p><strong>Nadya Qonita Fadia R.</strong></p>
-                    <p>Fashion & Designer</p>
+        <div class="container">
+            <div class="bio-content">
+                <div class="bio-image">
+                    <img src="img/Gambar WhatsApp 2025-05-13 pukul 23.13.23_bcca6120.jpg" alt="Nadya Qonita Fadia N.">
+                    <h3>Nadya Qonita Fadia N.</h3>
+                    <p>Founder & Designer</p>
+                </div>
+                <div class="bio-text">
+                    <h3>Bio:</h3>
+                    <p>Digital Business student with a strong interest in graphic design. Since the beginning of my studies, I have been actively developing my skills in branding and visual marketing. I have experience working on design projects for the Nobirt business group. I enjoy combining creativity with business strategy.</p>
                 </div>
             </div>
         </div>
@@ -58,113 +68,109 @@
 
     <!-- Social Media Section -->
     <section class="social-media">
-        <h2>My Social Media</h2>
-        <p>Follow and contact me anytime!</p>
-        
-        <div class="social-cards">
-            <!-- Instagram Card -->
-            <div class="social-card instagram-card">
-                <div class="social-header">
-                    <div class="profile-lock">
-                        <i class="fas fa-lock"></i> nadyaqt
-                    </div>
-                    <div class="social-icons">
-                        <span>+</span>
-                        <span>≡</span>
-                    </div>
-                </div>
-                
-                <div class="social-profile">
-                    <div class="profile-info">
-                        <div class="profile-line">
-                            <p>What's on</p>
-                            <p>your playlist...</p>
-                        </div>
-                        <h4>Nadya Qanita</h4>
-                    </div>
-                    <div class="profile-pic">
-                        <img src="img/Gambar WhatsApp 2025-05-13 pukul 23.13.23_bcca6120.jpg" alt="Profile Picture">
-                        <span class="add-icon">+</span>
-                    </div>
-                </div>
-                
-                <div class="social-stats">
-                    <div>
-                        <span>0</span>
-                        <p>posts</p>
-                    </div>
-                    <div>
-                        <span>722</span>
-                        <p>followers</p>
-                    </div>
-                    <div>
-                        <span>566</span>
-                        <p>following</p>
-                    </div>
-                </div>
-                
-                <div class="profile-bio">
-                    <p>I wish you well on your pursuit of your dream and happiness.</p>
-                    <div class="bio-emojis">✨🌙✨</div>
-                </div>
-                
-                <div class="social-buttons">
-                    <button>Edit profile</button>
-                    <button>Share profile</button>
-                    <button class="icon-button">📋</button>
-                </div>
-                
-                <div class="profile-links">
-                    <a href="#">Discover people</a>
-                    <a href="#" class="see-all">See all</a>
-                </div>
-            </div>
+        <div class="container">
+            <h2>My Social Media</h2>
+            <p>Follow and contact me anytime!</p>
             
-            <!-- TikTok Card -->
-            <div class="social-card tiktok-card">
-                <div class="social-header">
-                    <div class="tiktok-icon">
-                        <span>P</span>
+            <div class="social-cards">
+                <!-- Instagram Card -->
+                <div class="social-card instagram-card">
+                    <div class="social-header">
+                        <div class="profile-lock">
+                            <span class="lock-icon">🔒</span> nadyaqt
+                        </div>
+                        <div class="social-icons">
+                            <span>+</span>
+                            <span>≡</span>
+                        </div>
                     </div>
-                    <div class="profile-name">
-                        nadya <span class="verified">✓</span>
+                    
+                    <div class="social-profile">
+                        <div class="profile-info">
+                            <div class="profile-line">
+                                <p>What's on</p>
+                                <p>your playlist...</p>
+                            </div>
+                            <h4>Nadya Qanita</h4>
+                        </div>
+                        <div class="profile-pic">
+                            <img src="img/Gambar WhatsApp 2025-05-13 pukul 23.13.23_bcca6120.jpg" alt="Profile Picture">
+                        </div>
                     </div>
-                    <div class="social-icons">
-                        <span>🔗</span>
-                        <span>≡</span>
+                    
+                    <div class="social-stats">
+                        <div>
+                            <span>0</span>
+                            <p>posts</p>
+                        </div>
+                        <div>
+                            <span>722</span>
+                            <p>followers</p>
+                        </div>
+                        <div>
+                            <span>566</span>
+                            <p>following</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-bio">
+                        <p>I wish you well on your pursuit of your dream and happiness.</p>
+                        <div class="bio-emojis">✨🌙✨</div>
+                    </div>
+                    
+                    <div class="social-buttons">
+                        <button>Edit profile</button>
+                        <button>Share profile</button>
+                        <button class="icon-button">👤</button>
+                    </div>
+                    
+                    <div class="profile-links">
+                        <a href="#">Discover people</a>
+                        <a href="#" class="see-all">See all</a>
                     </div>
                 </div>
                 
-                <div class="tiktok-thoughts">
-                    <p>Thoughts?</p>
-                </div>
-                
-                <div class="profile-pic-large">
-                    <img src="img/Gambar WhatsApp 2025-05-13 pukul 23.13.23_bcca6120.jpg" alt="Profile Picture">
-                    <span class="add-icon">+</span>
-                </div>
-                
-                <div class="tiktok-handle">@pwetyna</div>
-                
-                <div class="social-stats">
-                    <div>
-                        <span>450</span>
-                        <p>Following</p>
+                <!-- TikTok Card -->
+                <div class="social-card tiktok-card">
+                    <div class="social-header">
+                        <div class="tiktok-icon">P</div>
+                        <div class="profile-name">nadya <span class="verified">✓</span></div>
+                        <div class="social-icons">
+                            <span>🔗</span>
+                            <span>≡</span>
+                        </div>
                     </div>
-                    <div>
-                        <span>1,903</span>
-                        <p>Followers</p>
+                    
+                    <div class="tiktok-thoughts">
+                        <p>Thoughts?</p>
                     </div>
-                    <div>
-                        <span>102.8K</span>
-                        <p>Likes</p>
+                    
+                    <div class="profile-pic-large">
+                        <img src="img/Gambar WhatsApp 2025-05-13 pukul 23.13.23_bcca6120.jpg" alt="Profile Picture">
                     </div>
-                </div>
-                
-                <div class="social-buttons">
-                    <button>Edit profile</button>
-                    <button>Share profile</button>
-                    <button class="icon-button">👤</button>
+                    
+                    <div class="tiktok-handle">@pwetyna</div>
+                    
+                    <div class="social-stats">
+                        <div>
+                            <span>450</span>
+                            <p>Following</p>
+                        </div>
+                        <div>
+                            <span>1,903</span>
+                            <p>Followers</p>
+                        </div>
+                        <div>
+                            <span>102.8K</span>
+                            <p>Likes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-buttons">
+                        <button>Edit profile</button>
+                        <button>Share profile</button>
+                        <button class="icon-button">👤</button>
+                    </div>
                 </div>
             </div>
         </div>

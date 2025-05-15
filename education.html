@@ -4,70 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education - Nadya's Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar Section -->
-    <nav class="navbar">
-        <div class="logo">
-            <h1>NADYA</h1>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>NADYA</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="active"><a href="education.html">Education</a></li>
+                        <li><a href="hobby.html">Hobby</a></li>
+                        <li><a href="portofolio.html">Portofolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li class="active"><a href="education.html">Education</a></li>
-                <li><a href="hobby.html">Hobby</a></li>
-                <li><a href="portofolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    </header>
 
     <!-- Education Section -->
-    <section class="education">
-        <div class="education-container">
-            <h2>My Education</h2>
+    <section class="education" style="padding: 120px 0 60px; background-color: #fdf1f5; min-height: 100vh;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 36px; margin-bottom: 50px; color: #333;">My Education</h2>
             
-            <div class="education-item">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="education-content">
-                    <h3>Ummushabri</h3>
-                    <p>Primary and secondary education focusing on core subjects and character development.</p>
-                    <div class="education-meta">
-                        <span><i class="fas fa-calendar"></i> 2010 - 2016</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Kendari</span>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Mu'adz bin Jabal - Kindergarten -->
+                <div style="display: flex; background-color: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="flex: 0 0 70px; height: 70px; background-color: #ffd6eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; color: #ff3399; font-size: 1.8rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #333;">Mu'adz bin Jabal</h3>
+                        <p style="color: #666; line-height: 1.7;">Kindergarten education.</p>
+                        <div style="display: flex; gap: 20px; margin-top: 15px;">
+                            <span style="display: flex; align-items: center; color: #777; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: #ff3399;"></i> Kendari</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="education-item">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="education-content">
-                    <h3>Ibnu Hajar Boarding School</h3>
-                    <p>High school education.</p>
-                    <div class="education-meta">
-                        <span><i class="fas fa-calendar"></i> 2016 - 2019</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Jakarta</span>
+                
+                <!-- Ummushabri - Elementary School -->
+                <div style="display: flex; background-color: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="flex: 0 0 70px; height: 70px; background-color: #ffd6eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; color: #ff3399; font-size: 1.8rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #333;">Ummushabri</h3>
+                        <p style="color: #666; line-height: 1.7;">Elementary school education.</p>
+                        <div style="display: flex; gap: 20px; margin-top: 15px;">
+                            <span style="display: flex; align-items: center; color: #777; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: #ff3399;"></i> Kendari</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+                
+                <!-- Ibnu Hajar - Middle School -->
+                <div style="display: flex; background-color: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="flex: 0 0 70px; height: 70px; background-color: #ffd6eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; color: #ff3399; font-size: 1.8rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #333;">Ibnu Hajar Boarding School</h3>
+                        <p style="color: #666; line-height: 1.7;">Middle school education.</p>
+                        <div style="display: flex; gap: 20px; margin-top: 15px;">
+                            <span style="display: flex; align-items: center; color: #777; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: #ff3399;"></i> Jakarta</span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="education-item">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div> 
-                <div class="education-content">
-                    <h3>State University of Makassar</h3>
-                    <p>Currently pursuing Bachelor's degree in Digital Business (4th semester).</p>
-                    <div class="education-meta">
-                        <span><i class="fas fa-calendar"></i> 2023 - Present</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Makassar</span>
+                <!-- Ibnu Hajar - High School -->
+                <div style="display: flex; background-color: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="flex: 0 0 70px; height: 70px; background-color: #ffd6eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; color: #ff3399; font-size: 1.8rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div> 
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #333;">Ibnu Hajar Boarding School</h3>
+                        <p style="color: #666; line-height: 1.7;">High school education.</p>
+                        <div style="display: flex; gap: 20px; margin-top: 15px;">
+                            <span style="display: flex; align-items: center; color: #777; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: #ff3399;"></i> Jakarta</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Universitas Negeri Makassar -->
+                <div style="display: flex; background-color: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="flex: 0 0 70px; height: 70px; background-color: #ffd6eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; color: #ff3399; font-size: 1.8rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div> 
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #333;">Universitas Negeri Makassar</h3>
+                        <p style="color: #666; line-height: 1.7;">University education. Currently pursuing Bachelor's degree in Digital Business.</p>
+                        <div style="display: flex; gap: 20px; margin-top: 15px;">
+                            <span style="display: flex; align-items: center; color: #777; font-size: 0.9rem;"><i class="fas fa-calendar" style="margin-right: 5px; color: #ff3399;"></i> 2023 - Present</span>
+                            <span style="display: flex; align-items: center; color: #777; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="margin-right: 5px; color: #ff3399;"></i> Makassar</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ongoing and beyond -->
+                <div style="display: flex; background-color: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="flex: 0 0 70px; height: 70px; background-color: #ffd6eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; color: #ff3399; font-size: 1.8rem;">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div> 
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #333;">Ongoing and beyond.</h3>
+                        <p style="color: #666; line-height: 1.7;">Continuing education and lifelong learning.</p>
                     </div>
                 </div>
             </div>

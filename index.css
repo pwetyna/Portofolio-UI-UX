@@ -1,0 +1,572 @@
+/* Modern Portfolio Style */
+
+/* Base & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-pink: #ff3399;
+    --light-pink: #ffd6eb;
+    --dark-text: #333333;
+    --light-text: #666666;
+    --white: #ffffff;
+    --yellow: #ffd968;
+    --green: #00a884;
+    --light-purple: #cfb3e9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header & Navigation */
+header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-pink);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    background: linear-gradient(45deg, #ff66cc, #ff3399);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 30px;
+}
+
+nav a {
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+nav li.active a {
+    background-color: var(--light-pink);
+    color: var(--primary-pink);
+}
+
+nav a:hover {
+    background-color: var(--light-pink);
+    color: var(--primary-pink);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding-top: 150px;
+    background-color: var(--white);
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h2 {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.hero-graphics {
+    flex: 1;
+    position: relative;
+    height: 400px;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-green {
+    width: 150px;
+    height: 150px;
+    background-color: var(--green);
+    top: 0;
+    right: 200px;
+    z-index: 1;
+}
+
+.circle-green::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    background: var(--light-purple);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.circle-yellow {
+    width: 200px;
+    height: 200px;
+    background-color: var(--yellow);
+    bottom: 50px;
+    right: 50px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.sun-rays {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 15deg,
+        var(--primary-pink) 15deg 18deg
+    );
+    border-radius: 50%;
+}
+
+.circle-small {
+    width: 100px;
+    height: 100px;
+    background-color: #f8f3e2;
+    top: 250px;
+    left: 100px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star-shape {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #ffa640;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+        50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+}
+
+/* Bio Section */
+.bio {
+    background-color: var(--light-pink);
+    padding: 80px 0;
+}
+
+.bio-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.bio-image {
+    flex: 0 0 300px;
+    text-align: center;
+}
+
+.bio-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 auto 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.bio-image h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.bio-image p {
+    color: var(--light-text);
+    font-size: 14px;
+}
+
+.bio-text {
+    flex: 1;
+}
+
+.bio-text h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.bio-text p {
+    color: var(--light-text);
+    line-height: 1.7;
+}
+
+/* Social Media Section */
+.social-media {
+    padding: 80px 0;
+    background-color: var(--yellow);
+    text-align: center;
+}
+
+.social-media h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.social-media > p {
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.social-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* Instagram Card */
+.instagram-card .social-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-lock {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-lock .lock-icon {
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-profile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-line {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--light-text);
+}
+
+.profile-line p {
+    line-height: 1.3;
+    margin: 0;
+}
+
+.profile-info h4 {
+    font-size: 16px;
+    margin: 5px 0 0;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.social-stats div span {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+}
+
+.social-stats div p {
+    font-size: 14px;
+    color: var(--light-text);
+    margin: 0;
+}
+
+.profile-bio {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.bio-emojis {
+    margin-top: 5px;
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.social-buttons button {
+    flex: 1;
+    padding: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.social-buttons button:hover {
+    background-color: #f5f5f5;
+}
+
+.icon-button {
+    flex: 0 0 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.profile-links a {
+    color: #0095f6;
+}
+
+.see-all {
+    font-weight: bold;
+}
+
+/* TikTok Card */
+.tiktok-card .social-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tiktok-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #fe2c55;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.profile-name {
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 16px;
+}
+
+.verified {
+    color: #25f4ee;
+}
+
+.tiktok-thoughts {
+    text-align: center;
+    margin: 15px 0;
+    color: var(--light-text);
+    font-size: 14px;
+}
+
+.profile-pic-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 3px solid #fe2c55;
+}
+
+.profile-pic-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tiktok-handle {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+    .hero-text h2 {
+        font-size: 48px;
+    }
+    
+    .bio-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bio-image {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav li {
+        margin: 5px 10px;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-text {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .hero-text h2 {
+        font-size: 36px;
+        margin: 0 auto 20px;
+    }
+    
+    .circle-green, .circle-yellow, .circle-small {
+        transform: scale(0.8);
+    }
+    
+    .social-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-text h2 {
+        font-size: 30px;
+    }
+    
+    .circle-green, .circle-yellow, .circle-small {
+        transform: scale(0.6);
+    }
+    
+    .hero-graphics {
+        height: 300px;
+    }
+}

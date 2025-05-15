@@ -1,63 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobby - Nadya's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Hobby Page Specific Styles */
+        .hobby-section {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+        
+        .hobby-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 50px;
+        }
+        
+        .hobby-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hobby-card {
+            position: relative;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .hobby-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .hobby-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .hobby-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            text-align: center;
+        }
+        
+        .hobby-overlay h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .card-traveling .hobby-overlay {
+            background: linear-gradient(to top, rgba(74, 105, 189, 0.7), transparent);
+        }
+        
+        .card-movies .hobby-overlay {
+            background: linear-gradient(to top, rgba(144, 55, 73, 0.7), transparent);
+        }
+        
+        .card-music .hobby-overlay {
+            background: linear-gradient(to top, rgba(46, 139, 87, 0.7), transparent);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .hobby-card {
+                height: 250px;
+            }
+            
+            .hobby-overlay h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar Section - Updated with correct links -->
-    <nav class="navbar">
-        <div class="logo">
-            <h1>NADYA</h1>
-             </div>
-        <div class="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li class="active"><a href="hobby.html">Hobby</a></li>
-                <li><a href="portofolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <!-- Navbar Section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>NADYA</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li class="active"><a href="hobby.html">Hobby</a></li>
+                        <li><a href="portofolio.html">Portofolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hobby Section -->
     <section class="hobby-section">
-        <div class="hobby-container">
-            <h2>My Hobbies</h2>
+        <div class="container">
+            <h2 class="hobby-title">Hobby</h2>
             
-            <div class="hobby-grid">
-                <div class="hobby-item">
-                    <div class="hobby-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <div class="hobby-content">
+            <div class="hobby-cards">
+                <!-- Traveling Card -->
+                <div class="hobby-card card-traveling">
+                    <img src="img/travel.png" alt="Traveling - A golden airplane charm and passport on a map">
+                    <div class="hobby-overlay">
                         <h3>Traveling</h3>
-                        <p>Exploring new places and cultures around the world</p>
                     </div>
                 </div>
                 
-                <div class="hobby-item">
-                    <div class="hobby-icon">
-                        <i class="fas fa-film"></i>
-                    </div>
-                    <div class="hobby-content">
+                <!-- Movies Card -->
+                <div class="hobby-card card-movies">
+                    <img src="img/image.png" alt="Watching Movies - Cozy setup with popcorn and TV">
+                    <div class="hobby-overlay">
                         <h3>Watching Movies</h3>
-                        <p>Enjoying films from various genres and countries</p>
                     </div>
                 </div>
-
-                <div class="hobby-item">
-                    <div class="hobby-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="hobby-content">
-                        <h3>Listening to Music</h3>
-                        <p>Discovering new artists and relaxing with favorite tunes</p>
+                
+                <!-- Music Card -->
+                <div class="hobby-card card-music">
+                    <img src="img/spotify.png" alt="Listening to Music - Spotify logo with headphones">
+                    <div class="hobby-overlay">
+                        <h3>Listening Music</h3>
                     </div>
                 </div>
             </div>
