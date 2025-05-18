@@ -1,121 +1,297 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Nadya's Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Navbar styles baru */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      .logo {
+        padding: 0 0 0 5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .logo img:hover {
+        transform: scale(1.05);
+      }
+
+      nav ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding-right: 2rem;
+      }
+
+      nav ul li a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: #fdf1f5;
+        color: #ff3399;
+      }
+
+      nav ul li.active a {
+        background-color: #ff3399;
+        color: white;
+      }
+
+      @media screen and (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 1rem;
+        }
+
+        .logo {
+          padding-left: 0;
+          margin-bottom: 1rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          padding-right: 0;
+          gap: 1rem;
+        }
+
+        nav ul li {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- Navbar Section -->
     <header>
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <h1>NADYA</h1>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="about.html">About</a></li>
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="hobby.html">Hobby</a></li>
-                        <li><a href="portofolio.html">Portofolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/11.png" alt="NADYA" />
         </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- About Me Section -->
     <section class="about-me">
-        <div class="container">
-            <div class="about-header">
-                <h2>Get to know me.</h2>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-description">
-                    <p>I am a Digital Business student with a passion for graphic design, branding, and visual marketing. Since the beginning of my studies, I have been actively honing my creative skills, blending aesthetics with business strategy to create impactful visual identities. My interest in design started with a fascination for how visuals can influence perception and decision-making, pushing me to explore deeper into the world of digital creativity.</p>
-                </div>
-                
-                <div class="experience-box">
-                    <p>I have worked on various campus projects, including branding, promotional materials, and content creation. One of my key experiences is contributing as a graphic designer for Nobirt, a business group where I handled visual branding and marketing materials to enhance the brand's presence. Through these projects, I have developed a strong understanding of how design plays a crucial role in business growth and engagement.</p>
-                </div>
-            </div>
-            
-            <div class="divider"></div>
-            
-            <!-- Education Section -->
-            <div class="education-section">
-                <div class="edu-image">
-                    <img src="img/menara phinsi.png" alt="University of Makassar Building">
-                    <div class="edu-decoration star1"></div>
-                    <div class="edu-decoration star2"></div>
-                    <div class="edu-circle"></div>
-                </div>
-                
-                <div class="edu-details">
-                    <h2>Education</h2>
-                    <h3>Digital Bussines - State University of Makassar</h3>
-                    
-                    <p>I am currently a 4th-semester <strong>Digital Business</strong> student at <strong>Universitas Negeri Makassar (UNM)</strong>. I have been studying here since 2023, continuously expanding my knowledge in digital marketing, branding, and business strategies. My journey in this field allows me to combine creativity with strategic thinking, shaping innovative solutions for the digital era.</p>
-                </div>
-            </div>
-            
-            <!-- Skills Section -->
-            <div class="skills-section">
-                <div class="skills-header">
-                    <h3>Skills</h3>
-                    <p>The skills I am capable of and still learning:</p>
-                </div>
-                
-                <div class="skills-container">
-                    <div class="skill-row">
-                        <div class="skill-item">
-                            <div class="skill-logo">
-                                <img src="img/canva-logo.png" alt="Canva">
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-logo">
-                                <img src="img/medium-logo.png" alt="Medium">
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-row">
-                        <div class="skill-item">
-                            <div class="skill-logo">
-                                <img src="img/figma-logo.png" alt="Figma">
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 60%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-logo">
-                                <img src="img/blogger-logo.png" alt="Blogger">
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="about-header">
+          <h2>Get to know me.</h2>
         </div>
+
+        <div class="about-content">
+          <div class="about-description">
+            <p>
+              I am a Digital Business student with a passion for graphic design,
+              branding, and visual marketing. Since the beginning of my studies,
+              I have been actively honing my creative skills, blending
+              aesthetics with business strategy to create impactful visual
+              identities. My interest in design started with a fascination for
+              how visuals can influence perception and decision-making, pushing
+              me to explore deeper into the world of digital creativity.
+            </p>
+          </div>
+
+          <div class="experience-box">
+            <p>
+              I have worked on various campus projects, including branding,
+              promotional materials, and content creation. One of my key
+              experiences is contributing as a graphic designer for Nobirt, a
+              business group where I handled visual branding and marketing
+              materials to enhance the brand's presence. Through these projects,
+              I have developed a strong understanding of how design plays a
+              crucial role in business growth and engagement.
+            </p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Education Section -->
+        <div class="education-section">
+          <div class="edu-image">
+            <img
+              src="img/menara phinsi.png"
+              alt="University of Makassar Building"
+            />
+            <div class="edu-decoration star1"></div>
+            <div class="edu-decoration star2"></div>
+            <div class="edu-circle"></div>
+          </div>
+
+          <div class="edu-details">
+            <h2>Education</h2>
+            <h3>Digital Bussines - State University of Makassar</h3>
+
+            <p>
+              I am currently a 4th-semester
+              <strong>Digital Business</strong> student at
+              <strong>Universitas Negeri Makassar (UNM)</strong>. I have been
+              studying here since 2023, continuously expanding my knowledge in
+              digital marketing, branding, and business strategies. My journey
+              in this field allows me to combine creativity with strategic
+              thinking, shaping innovative solutions for the digital era.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+          <div class="skills-header">
+            <h3>Skills</h3>
+            <p>The skills I am capable of and still learning:</p>
+          </div>
+
+          <div class="skills-container">
+            <div class="skill-row">
+              <div class="skill-item">
+                <div class="skill-logo">
+                  <img src="img/logo canva.jpeg" alt="Canva" />
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-logo">
+                  <img src="img/logo capcut.png" alt="Medium" />
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-item">
+                <div class="skill-logo">
+                  <img src="img/logo figma.png" alt="Figma" />
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 60%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-logo">
+                  <img src="img/logo blogger.png" alt="Blogger" />
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hobby Section -->
+        <div class="hobby-section">
+          <div class="hobby-header">
+            <h3>Hobbies</h3>
+            <p>Activities I enjoy in my free time:</p>
+          </div>
+
+          <div class="hobby-gallery">
+            <!-- Hobby Item 1 -->
+            <div class="hobby-item">
+              <img src="img/bira1.jpg" alt="Reading Books" />
+              <div class="hobby-overlay">
+                <h3>Traveling</h3>
+                <p>I enjoy reading books about design and business</p>
+              </div>
+            </div>
+
+            <!-- Hobby Item 2 -->
+            <div class="hobby-item">
+              <img src="img/photography-hobby.jpg" alt="Photography" />
+              <div class="hobby-overlay">
+                <h3>Photography</h3>
+                <p>Capturing beautiful moments and inspiration</p>
+              </div>
+            </div>
+
+            <!-- Hobby Item 3 -->
+            <div class="hobby-item">
+              <img src="img/masak-hobby.png" alt="Cooking" />
+              <div class="hobby-overlay">
+                <h3>Cooking</h3>
+                <p>Exploring new menu</p>
+              </div>
+            </div>
+
+            <!-- Hobby Item 4 -->
+            <div class="hobby-item">
+              <img src="img/watching-hobby.avif" alt="Cooking" />
+              <div class="hobby-overlay">
+                <h3>Watching</h3>
+                <p>Experimenting with new recipes</p>
+              </div>
+            </div>
+
+            <!-- Hobby Item 5 -->
+            <div class="hobby-item">
+              <img src="img/reading-hobby.jpg" alt="Traveling" />
+              <div class="hobby-overlay">
+                <h3>Reading</h3>
+                <p>Exploring new places and cultures</p>
+              </div>
+            </div>
+
+            <!-- Hobby Item 6 -->
+            <div class="hobby-item">
+              <img src="img/valorant-hobby.jpeg" alt="Traveling" />
+              <div class="hobby-overlay">
+                <h3>Playing Games</h3>
+                <p>Exploring new places and cultures</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>

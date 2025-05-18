@@ -1,352 +1,474 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Nadya's Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-        /* Portfolio specific styles */
-        .portfolio-section {
-            padding-top: 120px;
-            padding-bottom: 60px;
-            background-color: #fdf1f5;
-            min-height: 100vh;
+      /* Navbar styles baru */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      .logo {
+        padding: 0 0 0 5rem;  /* Menambahkan padding-left 5rem seperti di index */
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 60px; /* Mengubah tinggi gambar menjadi 60px seperti di index */
+        width: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .logo img:hover {
+        transform: scale(1.05);
+      }
+
+      nav ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding-right: 2rem;
+      }
+
+      nav ul li a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: #fdf1f5;
+        color: #ff3399;
+      }
+
+      nav ul li.active a {
+        background-color: #ff3399;
+        color: white;
+      }
+
+      @media screen and (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 1rem;
         }
-        
-        .portfolio-heading {
-            text-align: center;
-            margin-bottom: 40px;
+
+        .logo {
+          padding-left: 0;
+          margin-bottom: 1rem;
         }
-        
-        .portfolio-heading h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          padding-right: 0;
+          gap: 1rem;
         }
-        
-        .portfolio-heading p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
+
+        nav ul li {
+          width: 100%;
+          text-align: center;
         }
-        
+      }
+
+      /* Portfolio specific styles */
+      .portfolio-section {
+        padding-top: 120px;
+        padding-bottom: 60px;
+        background-color: #fdf1f5;
+        min-height: 100vh;
+      }
+
+      .portfolio-heading {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .portfolio-heading h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-heading p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .portfolio-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 60px;
+      }
+
+      .portfolio-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 250px;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        transform: translateY(0);
+      }
+
+      .portfolio-overlay h3 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+      }
+
+      .portfolio-overlay p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        opacity: 0.9;
+      }
+
+      .btn-view {
+        display: inline-block;
+        padding: 6px 15px;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 20px;
+        color: white;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .btn-view:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Tools section */
+      .tools-section {
+        padding: 60px 0;
+        background-color: white;
+        text-align: center;
+      }
+
+      .tools-section h3 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .tools-section p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .tool-card {
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .tool-card img {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 15px;
+        object-fit: contain;
+      }
+
+      .tool-card h4 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .tool-card p {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .skill-level {
+        height: 6px;
+        background-color: #e9ecef;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+      .skill-percent {
+        display: block;
+        height: 100%;
+        background: linear-gradient(to right, #ff66cc, #ff3399);
+        border-radius: 3px;
+      }
+
+      @media screen and (max-width: 768px) {
         .portfolio-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
+          grid-template-columns: repeat(2, 1fr);
         }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            height: 250px;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-        
-        .portfolio-overlay h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-        
-        .portfolio-overlay p {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-        
-        .btn-view {
-            display: inline-block;
-            padding: 6px 15px;
-            background: transparent;
-            border: 1px solid white;
-            border-radius: 20px;
-            color: white;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-view:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        /* Tools section */
-        .tools-section {
-            padding: 60px 0;
-            background-color: white;
-            text-align: center;
-        }
-        
-        .tools-section h3 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        
-        .tools-section p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        
+
         .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto;
+          grid-template-columns: repeat(2, 1fr);
         }
-        
-        .tool-card {
-            background-color: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+      }
+
+      @media screen and (max-width: 576px) {
+        .portfolio-gallery {
+          grid-template-columns: 1fr;
         }
-        
-        .tool-card:hover {
-            transform: translateY(-5px);
+
+        .tool-grid {
+          grid-template-columns: 1fr;
         }
-        
-        .tool-card img {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 15px;
-            object-fit: contain;
+
+        .portfolio-heading h2 {
+          font-size: 2rem;
         }
-        
-        .tool-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: #333;
-        }
-        
-        .tool-card p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .skill-level {
-            height: 6px;
-            background-color: #e9ecef;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        
-        .skill-percent {
-            display: block;
-            height: 100%;
-            background: linear-gradient(to right, #ff66cc, #ff3399);
-            border-radius: 3px;
-        }
-        
-        @media screen and (max-width: 768px) {
-            .portfolio-gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .tool-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media screen and (max-width: 576px) {
-            .portfolio-gallery {
-                grid-template-columns: 1fr;
-            }
-            
-            .tool-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .portfolio-heading h2 {
-                font-size: 2rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar Section -->
     <header>
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <h1>NADYA</h1>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="hobby.html">Hobby</a></li>
-                        <li class="active"><a href="portofolio.html">Portofolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="img/11.png" alt="NADYA" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li class="active"><a href="portofolio.html">Portofolio</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
         </div>
+      </div>
     </header>
 
     <!-- Portfolio Section -->
     <section class="portfolio-section">
-        <div class="container">
-            <div class="portfolio-heading">
-                <h2>My Creative Works</h2>
-                <p>A collection of my design projects and creative endeavors</p>
-            </div>
-            
-            <div class="portfolio-gallery">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item">
-                    <img src="img/spotify.png" alt="Digital art project featuring abstract shapes">
-                    <div class="portfolio-overlay">
-                        <h3>Abstract Harmony</h3>
-                        <p>Digital Art Series</p>
-                        <a href="#" class="btn-view">View Project</a>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item">
-                    <img src="img/spotify.png" alt="Brand identity design for a coffee shop">
-                    <div class="portfolio-overlay">
-                        <h3>Brew Haven Branding</h3>
-                        <p>Brand Identity</p>
-                        <a href="#" class="btn-view">View Project</a>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item">
-                    <img src="img/spotify.png" alt="Mobile app interface design">
-                    <div class="portfolio-overlay">
-                        <h3>Fitness App UI</h3>
-                        <p>Mobile Design</p>
-                        <a href="#" class="btn-view">View Project</a>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-item">
-                    <img src="img/spotify.png" alt="Website redesign project">
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce Redesign</h3>
-                        <p>Web Design</p>
-                        <a href="#" class="btn-view">View Project</a>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-item">
-                    <img src="img/spotify.png" alt="Typography poster design">
-                    <div class="portfolio-overlay">
-                        <h3>Type Exploration</h3>
-                        <p>Print Design</p>
-                        <a href="#" class="btn-view">View Project</a>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-item">
-                    <img src="img/spotify.png" alt="Photography series of urban landscapes">
-                    <div class="portfolio-overlay">
-                        <h3>Urban Perspectives</h3>
-                        <p>Photography</p>
-                        <a href="#" class="btn-view">View Project</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tools Section -->
-            <div class="tools-section">
-                <h3>My Creative Toolkit</h3>
-                <p>Software and applications I use to bring ideas to life</p>
-                
-                <div class="tool-grid">
-                    <!-- Tool 1 -->
-                    <div class="tool-card">
-                        <img src="img/Canva logo.png" alt="Canva logo">
-                        <h4>Canva</h4>
-                        <p>For quick designs and social media content</p>
-                        <div class="skill-level">
-                            <span class="skill-percent" style="width: 90%"></span>
-                        </div>
-                    </div>
-                    
-                    <!-- Tool 2 -->
-                    <div class="tool-card">
-                        <img src="img/Figma logo.png" alt="Figma logo">
-                        <h4>Figma</h4>
-                        <p>For UI/UX design and prototyping</p>
-                        <div class="skill-level">
-                            <span class="skill-percent" style="width: 85%"></span>
-                        </div>
-                    </div>
-                    
-                    <!-- Tool 3 -->
-                    <div class="tool-card">
-                        <img src="img/" alt="CapCut logo">
-                        <h4>CapCut</h4>
-                        <p>For video editing and content creation</p>
-                        <div class="skill-level">
-                            <span class="skill-percent" style="width: 80%"></span>
-                        </div>
-                    </div>
-                    
-                    <!-- Tool 4 -->
-                    <div class="tool-card">
-                        <img src="images/blogger.png" alt="Blogger logo">
-                        <h4>Blogger</h4>
-                        <p>For content writing and publishing</p>
-                        <div class="skill-level">
-                            <span class="skill-percent" style="width: 75%"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="portfolio-heading">
+          <h2>My Creative Works</h2>
+          <p>A collection of my design projects and creative endeavors</p>
         </div>
+
+        <div class="portfolio-gallery">
+          <!-- Portfolio Item 1 -->
+          <div class="portfolio-item">
+            <img
+              src="img/project sayurnara.jpg"
+              alt="Prototype App for Fresh Market Convenience"
+            />
+            <div class="portfolio-overlay">
+              <h3>SayurNara, Fresh Market</h3>
+              <p>Prototype App for Fresh Market Convenience</p>
+              <a href="#" class="btn-view">View Project</a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 2 -->
+          <div class="portfolio-item">
+            <img
+              src="img/project nodirt.png"
+              alt="Branding for Shoe Protection Lifestyle Product"
+            />
+            <div class="portfolio-overlay">
+              <h3>nodirt.id, protection brand</h3>
+              <p>Branding for Shoe Protection Lifestyle Product</p>
+              <a href="#" class="btn-view">View Project</a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 3 -->
+          <div class="portfolio-item">
+            <img
+              src="img/project money wise.png"
+              alt="Finance Tracker App Design Concept"
+            />
+            <div class="portfolio-overlay">
+              <h3>Personal Finance Management App</h3>
+              <p>
+                A brand concept for a mobile application designed to help users
+                manage their finances wisely, efficiently, and with ease.
+              </p>
+              <a href="#" class="btn-view">View Project</a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 4 -->
+          <div class="portfolio-item">
+            <img
+              src="img/Desain tanpa judul.png"
+              alt="Website redesign project"
+            />
+            <div class="portfolio-overlay">
+              <h3>ID Card Design</h3>
+              <p>
+                Minimalist and modern ID card for a shoe protection brand,
+                reflecting the tagline “Your Style, Our Shield
+              </p>
+              <a href="#" class="btn-view">View Project</a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 5 -->
+          <div class="portfolio-item">
+            <img
+              src="img/Cuplikan layar 2025-03-25 054926.png"
+              alt="Typography poster design"
+            />
+            <div class="portfolio-overlay">
+              <h3>Blog Portfolio</h3>
+              <p>
+                A creative platform to showcase academic projects and ideas in
+                digital marketing.
+              </p>
+              <a href="#" class="btn-view">View Project</a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 6 -->
+          <div class="portfolio-item">
+            <img
+              src="img/desain desainku.png"
+              alt="Photography series of urban landscapes"
+            />
+            <div class="portfolio-overlay">
+              <h3>A Collection of My Creative Design Works</h3>
+              <p>
+                Some samples of visual designs I created for various purposes,
+                ranging from product promotions to organizational event
+                planning.
+              </p>
+              <a href="#" class="btn-view">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools Section -->
+        <div class="tools-section">
+          <h3>My Creative Toolkit</h3>
+          <p>Software and applications I use to bring ideas to life</p>
+
+          <div class="tool-grid">
+            <!-- Tool 1 -->
+            <div class="tool-card">
+              <img src="img/Canva logo.png" alt="Canva logo" />
+              <h4>Canva</h4>
+              <p>For quick designs and social media content</p>
+              <div class="skill-level">
+                <span class="skill-percent" style="width: 100%"></span>
+              </div>
+            </div>
+
+            <!-- Tool 2 -->
+            <div class="tool-card">
+              <img src="img/Figma logo.png" alt="Figma logo" />
+              <h4>Figma</h4>
+              <p>For UI/UX design and prototyping</p>
+              <div class="skill-level">
+                <span class="skill-percent" style="width: 100%"></span>
+              </div>
+            </div>
+
+            <!-- Tool 3 -->
+            <div class="tool-card">
+              <img src="img/logo capcut.png" alt="CapCut logo" />
+              <h4>CapCut</h4>
+              <p>For video editing and content creation</p>
+              <div class="skill-level">
+                <span class="skill-percent" style="width: 100%"></span>
+              </div>
+            </div>
+
+            <!-- Tool 4 -->
+            <div class="tool-card">
+              <img src="img/logo blogger.png" alt="Blogger logo" />
+              <h4>Blogger</h4>
+              <p>For content writing and publishing</p>
+              <div class="skill-level">
+                <span class="skill-percent" style="width: 100%"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>
