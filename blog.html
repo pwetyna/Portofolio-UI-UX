@@ -753,13 +753,15 @@
             <h3>Basic Skincare Untuk Semua Jenis Kulit</h3>
 
             <div class="am-pm-tabs">
-              <button class="am-pm-tab active" data-time="morning">
+              <button class="am-pm-tab active" data-target="am-routine">
                 AM Routine
               </button>
-              <button class="am-pm-tab" data-time="night">PM Routine</button>
+              <button class="am-pm-tab" data-target="pm-routine">
+                PM Routine
+              </button>
             </div>
 
-            <div class="routine-content active" data-time="morning">
+            <div class="routine-content active" id="am-routine">
               <div class="routine-grid">
                 <!-- Step 1 -->
                 <div class="routine-card">
@@ -835,7 +837,7 @@
               </div>
             </div>
 
-            <div class="routine-content" data-time="night">
+            <div class="routine-content" id="pm-routine">
               <div class="routine-grid">
                 <!-- Step 1 -->
                 <div class="routine-card">
@@ -955,13 +957,13 @@
             <h3>Spesial Night Treatment Routines</h3>
 
             <div class="routines-tabs">
-              <button class="routine-tab active" data-routine="brightening">
+              <button class="routine-tab active" data-target="brightening">
                 Malam Pencerah
               </button>
-              <button class="routine-tab" data-routine="retinol">
+              <button class="routine-tab" data-target="retinol">
                 Malam Retinol
               </button>
-              <button class="routine-tab" data-routine="hydrating">
+              <button class="routine-tab" data-target="hydrating">
                 Malam Hydrating
               </button>
               <button class="routine-tab" data-target="moisturizing">
@@ -985,10 +987,7 @@
             </div>
 
             <!-- Brightening Night Routine -->
-            <div
-              class="night-routine-content active"
-              data-routine="brightening"
-            >
+            <div class="night-routine-content active" id="brightening">
               <div class="night-routine-header">
                 <div class="night-routine-icon">
                   <img src="img/brightness-icon.png" alt="Brightening" />
@@ -1131,7 +1130,7 @@
             </div>
 
             <!-- Retinol Night Routine -->
-            <div class="night-routine-content" data-routine="retinol">
+            <div class="night-routine-content" id="retinol">
               <div class="night-routine-header">
                 <div class="night-routine-icon">
                   <img src="img/retinol-icon.png" alt="Retinol" />
@@ -1271,7 +1270,7 @@
             </div>
 
             <!-- Hydrating Night Routine -->
-            <div class="night-routine-content" data-routine="hydrating">
+            <div class="night-routine-content" id="hydrating">
               <div class="night-routine-header">
                 <div class="night-routine-icon">
                   <img src="img/hydrating-icon.png" alt="Hydrating" />
@@ -1349,78 +1348,973 @@
                 </div>
               </div>
             </div>
+
+            <!-- Moisturizing Night Routine -->
+            <div class="night-routine-content" id="moisturizing">
+              <div class="night-routine-header">
+                <div class="night-routine-icon">
+                  <img src="img/moisturizing-icon.png" alt="Moisturizing" />
+                </div>
+                <div class="night-routine-title">
+                  <h4>Malam Moisturizing</h4>
+                  <p>
+                    Rutinitas malam untuk kulit kering yang membutuhkan
+                    kelembaban dan nutrisi ekstra
+                  </p>
+                </div>
+              </div>
+
+              <div class="night-routine-steps">
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Gentle Cleansing</h5>
+                    <p>
+                      Bersihkan wajah dengan cleanser krim yang lembut untuk
+                      menjaga kelembaban alami kulit.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> La Roche-Posay Toleriane
+                      Hydrating Gentle Cleanser atau Cetaphil Gentle Skin
+                      Cleanser
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Hydrating Toner</h5>
+                    <p>
+                      Aplikasikan toner yang kaya akan ceramide dan humectant
+                      untuk menyiapkan kulit menerima kelembaban.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Klairs Supple Preparation Toner
+                      atau Laneige Cream Skin Refiner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Essence</h5>
+                    <p>
+                      Gunakan essence yang menutrisi untuk memberikan lapisan
+                      kelembaban tambahan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> COSRX Snail 96 Mucin Power
+                      Essence atau Pyunkang Yul Essence Toner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Hydrating Serum</h5>
+                    <p>
+                      Aplikasikan serum berbasis hyaluronic acid dan glycerin
+                      untuk mengikat kelembaban maksimal.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> The Ordinary Marine Hyaluronics
+                      atau Hada Labo Gokujyun Premium Hydrating Lotion
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Facial Oil</h5>
+                    <p>
+                      Aplikasikan 3-4 tetes minyak wajah yang sesuai dengan
+                      jenis kulit untuk memberikan nutrisi dan mencegah TEWL.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> The Ordinary Rosehip Oil atau
+                      Drunk Elephant Virgin Marula Luxury Facial Oil
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Rich Moisturizer</h5>
+                    <p>
+                      Gunakan pelembab dengan tekstur kaya yang mengandung
+                      ceramide, shea butter, atau squalane.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> CeraVe Moisturizing Cream atau
+                      Belif The True Cream Moisturizing Bomb
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Sleeping Pack (2-3x seminggu)</h5>
+                    <p>
+                      Tambahkan sleeping pack sebagai lapisan terakhir untuk
+                      mengunci semua kelembaban sepanjang malam.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Laneige Water Sleeping Mask atau
+                      COSRX Ultimate Nourishing Rice Overnight Spa Mask
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Lip Treatment</h5>
+                    <p>
+                      Jangan lupakan bibir kering dengan mengaplikasikan lip
+                      mask yang intens.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Laneige Lip Sleeping Mask atau
+                      Bite Beauty Agave Lip Mask
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vitamin C Night Routine -->
+            <div class="night-routine-content" id="vitc">
+              <div class="night-routine-header">
+                <div class="night-routine-icon">
+                  <img src="img/vitc-icon.png" alt="Vitamin C" />
+                </div>
+                <div class="night-routine-title">
+                  <h4>Malam Vitamin C</h4>
+                  <p>
+                    Rutinitas malam dengan fokus antioksidan dan perlindungan
+                    kulit dari kerusakan
+                  </p>
+                </div>
+              </div>
+
+              <div class="night-routine-steps">
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Double Cleansing</h5>
+                    <p>
+                      Bersihkan wajah dengan oil cleanser dilanjutkan dengan gel
+                      atau foam cleanser.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> DHC Deep Cleansing Oil + Krave
+                      Beauty Matcha Hemp Hydrating Cleanser
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>pH-Balancing Toner</h5>
+                    <p>
+                      Gunakan toner dengan pH seimbang untuk mempersiapkan kulit
+                      menerima vitamin C dengan optimal.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Thayers Witch Hazel Toner atau
+                      Etude House SoonJung pH 5.5 Relief Toner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Vitamin C Serum</h5>
+                    <p>
+                      Aplikasikan serum vitamin C konsentrasi 10-20% untuk
+                      perlindungan antioksidan, mencerahkan, dan meratakan warna
+                      kulit.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Timeless 20% Vitamin C + E
+                      Ferulic Acid Serum atau Rohto Melano CC Essence
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Tunggu 15 Menit</h5>
+                    <p>
+                      Biarkan vitamin C terserap sempurna selama 15 menit untuk
+                      efektivitas optimal.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Hydrating Essence</h5>
+                    <p>
+                      Tambahkan essence untuk hidrasi tambahan dan mempersiapkan
+                      kulit untuk penyerapan produk berikutnya.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Missha Time Revolution First
+                      Treatment Essence atau I'm From Rice Toner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Antioxidant Booster (Opsional)</h5>
+                    <p>
+                      Tambahkan serum dengan antioksidan tambahan seperti
+                      resveratrol, green tea, atau astaxanthin.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> The Ordinary Resveratrol 3% +
+                      Ferulic Acid 3% atau PURITO Centella Green Level Buffet
+                      Serum
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Pelembab</h5>
+                    <p>
+                      Aplikasikan pelembab dengan formula ringan yang tidak
+                      mengandung vitamin C untuk menghindari interaksi.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> CosRX Oil-Free Ultra-Moisturizing
+                      Lotion atau Neutrogena Hydro Boost Water Gel
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Eye Cream</h5>
+                    <p>
+                      Gunakan eye cream dengan antioksidan untuk melindungi area
+                      sensitif di sekitar mata.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Kiehl's Creamy Eye Treatment with
+                      Avocado atau The Inkey List Caffeine Eye Cream
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Niacinamide Night Routine -->
+            <div class="night-routine-content" id="niacinamide">
+              <div class="night-routine-header">
+                <div class="night-routine-icon">
+                  <img src="img/niacinamide-icon.png" alt="Niacinamide" />
+                </div>
+                <div class="night-routine-title">
+                  <h4>Malam Niacinamide</h4>
+                  <p>
+                    Rutinitas malam untuk menyeimbangkan produksi sebum dan
+                    memperkecil pori-pori
+                  </p>
+                </div>
+              </div>
+
+              <div class="night-routine-steps">
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Double Cleansing</h5>
+                    <p>
+                      Bersihkan wajah dengan oil cleanser untuk mengangkat
+                      makeup dan sunscreen, lalu lanjutkan dengan gel cleanser.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Kose Softymo Speedy Cleansing Oil
+                      + Cetaphil Gentle Skin Cleanser
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>BHA Toner (1-2x seminggu)</h5>
+                    <p>
+                      Gunakan toner dengan kandungan BHA untuk membersihkan pori
+                      dan mengendalikan produksi minyak.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Paula's Choice 2% BHA Liquid
+                      Exfoliant atau COSRX BHA Blackhead Power Liquid
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Balancing Toner</h5>
+                    <p>
+                      Pada hari tanpa exfoliasi, gunakan toner menyeimbangkan
+                      untuk menenangkan kulit.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Isntree Green Tea Fresh Toner
+                      atau Pyunkang Yul Essence Toner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Niacinamide Serum</h5>
+                    <p>
+                      Aplikasikan serum dengan niacinamide (vitamin B3) 5-10%
+                      untuk mengatur produksi sebum, memperkecil pori, dan
+                      mencerahkan kulit.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> The Ordinary Niacinamide 10% +
+                      Zinc 1% atau Paula's Choice 10% Niacinamide Booster
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Hydrating Essence (Opsional)</h5>
+                    <p>
+                      Tambahkan essence ringan untuk hidrasi tambahan tanpa
+                      menambah minyak berlebih.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> COSRX Snail 96 Mucin Power
+                      Essence atau Benton Snail Bee High Content Essence
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Treatment Serum (Opsional)</h5>
+                    <p>
+                      Tambahkan serum dengan azelaic acid atau tranexamic acid
+                      untuk tambahan manfaat mencerahkan dan anti-kemerahan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> The Ordinary Azelaic Acid
+                      Suspension 10% atau Cos De BAHA Tranexamic Acid 5% Serum
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Pelembab Oil-Free</h5>
+                    <p>
+                      Gunakan pelembab oil-free dengan tekstur gel atau lotion
+                      ringan untuk kelembaban tanpa kelebihan minyak.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Neutrogena Hydro Boost Water Gel
+                      atau iUNIK Centella Calming Gel Cream
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Spot Treatment</h5>
+                    <p>
+                      Aplikasikan produk spot treatment pada area dengan jerawat
+                      atau bekas jerawat.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> COSRX Acne Pimple Master Patch
+                      atau Mario Badescu Drying Lotion
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Anti-Aging Night Routine -->
+            <div class="night-routine-content" id="antiaging">
+              <div class="night-routine-header">
+                <div class="night-routine-icon">
+                  <img src="img/antiaging-icon.png" alt="Anti-Aging" />
+                </div>
+                <div class="night-routine-title">
+                  <h4>Malam Anti-Aging</h4>
+                  <p>
+                    Rutinitas malam untuk mengatasi tanda-tanda penuaan dan
+                    meremajakan kulit
+                  </p>
+                </div>
+              </div>
+
+              <div class="night-routine-steps">
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Double Cleansing</h5>
+                    <p>
+                      Bersihkan wajah dengan menyeluruh menggunakan cleansing
+                      balm atau oil diikuti dengan cleanser kedua berbasis gel
+                      atau krim.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Clinique Take The Day Off
+                      Cleansing Balm + SU:M37 Miracle Rose Cleansing Stick
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Chemical Exfoliation (2-3x seminggu)</h5>
+                    <p>
+                      Gunakan AHA pada malam tanpa retinol untuk mengangkat sel
+                      kulit mati dan mempercepat regenerasi sel.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Sunday Riley Good Genes Lactic
+                      Acid Treatment atau Drunk Elephant T.L.C. Framboos
+                      Glycolic Night Serum
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Hydrating Toner</h5>
+                    <p>
+                      Aplikasikan toner yang kaya humectant untuk memberikan
+                      hidrasi dan mempersiapkan kulit.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> SK-II Clear Lotion atau Sulwhasoo
+                      First Care Activating Serum
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Anti-Aging Serum</h5>
+                    <p>
+                      Aplikasikan serum dengan bahan anti-aging seperti peptide,
+                      growth factors, atau bakuchiol (alternatif retinol).
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> The Ordinary Matrixyl 10% + HA
+                      atau NIOD Copper Amino Isolate Serum 2:1
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Retinol/Retinoid (2-3x seminggu)</h5>
+                    <p>
+                      Pada malam tanpa exfoliasi, gunakan retinol untuk
+                      merangsang produksi kolagen dan mempercepat turnover sel
+                      kulit.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Sunday Riley A+ High-Dose
+                      Retinoid Serum atau Medik8 Crystal Retinal
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Eye Treatment</h5>
+                    <p>
+                      Aplikasikan eye cream dengan retinol atau peptide khusus
+                      untuk area mata untuk mengurangi garis halus dan kerutan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Shiseido Benefiance
+                      WrinkleResist24 Eye Cream atau La Mer The Eye Concentrate
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Rich Moisturizer</h5>
+                    <p>
+                      Gunakan pelembab yang kaya akan ceramide, peptide, dan
+                      antioksidan untuk menutrisi kulit sepanjang malam.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Drunk Elephant Protini
+                      Polypeptide Cream atau Sulwhasoo Concentrated Ginseng
+                      Renewing Cream
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Facial Oil</h5>
+                    <p>
+                      Tambahkan 2-3 tetes facial oil kaya antioksidan untuk
+                      lapisan anti-aging tambahan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Sunday Riley Luna Sleeping Night
+                      Oil atau Farmacy Honey Grail Face Oil
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Acne Night Routine -->
+            <div class="night-routine-content" id="acne">
+              <div class="night-routine-header">
+                <div class="night-routine-icon">
+                  <img src="img/acne-icon.png" alt="Anti-Jerawat" />
+                </div>
+                <div class="night-routine-title">
+                  <h4>Malam Anti-Jerawat</h4>
+                  <p>
+                    Rutinitas malam untuk mengatasi dan mencegah jerawat serta
+                    menjaga kulit tetap seimbang
+                  </p>
+                </div>
+              </div>
+
+              <div class="night-routine-steps">
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Double Cleansing</h5>
+                    <p>
+                      Gunakan oil cleanser non-comedogenic dilanjutkan dengan
+                      gentle cleanser berbahan aktif salicylic acid atau tea
+                      tree oil.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Simple Kind to Skin Hydrating
+                      Cleansing Oil + CeraVe SA Cleanser
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>BHA Toner</h5>
+                    <p>
+                      Aplikasikan toner dengan BHA (salicylic acid) untuk
+                      membersihkan pori dan mengurangi peradangan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> COSRX BHA Blackhead Power Liquid
+                      atau Some By Mi AHA-BHA-PHA 30 Days Miracle Toner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Soothing Essence (Opsional)</h5>
+                    <p>
+                      Tambahkan essence dengan bahan menenangkan seperti
+                      centella asiatica untuk menenangkan kulit yang meradang.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> PURITO Centella Green Level
+                      Buffet Serum atau COSRX Snail 96 Mucin Power Essence
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Treatment Serum</h5>
+                    <p>
+                      Gunakan serum dengan niacinamide, zinc, atau azelaic acid
+                      untuk mengontrol sebum dan meredakan peradangan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> The Ordinary Niacinamide 10% +
+                      Zinc 1% atau Paula's Choice Azelaic Acid Booster
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Retinoid (2-3x seminggu)</h5>
+                    <p>
+                      Pada malam tertentu, gunakan retinoid seperti adapalene
+                      untuk mengurangi peradangan dan mencegah penyumbatan pori.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Differin Gel (Adapalene) atau The
+                      Ordinary Granactive Retinoid 2% Emulsion
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Light Moisturizer</h5>
+                    <p>
+                      Gunakan pelembab oil-free dan non-comedogenic yang tetap
+                      memberikan hidrasi tanpa menyumbat pori.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> CeraVe PM Facial Moisturizing
+                      Lotion atau Neutrogena Hydro Boost Water Gel
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Spot Treatment</h5>
+                    <p>
+                      Aplikasikan spot treatment dengan benzoyl peroxide,
+                      sulfur, atau tea tree oil pada jerawat aktif.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> La Roche-Posay Effaclar Duo+ atau
+                      COSRX Acne Pimple Master Patch
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Clay Mask (1-2x seminggu)</h5>
+                    <p>
+                      Gunakan clay mask pada malam khusus untuk menyerap
+                      kelebihan minyak dan mengecilkan pori.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Innisfree Super Volcanic Pore
+                      Clay Mask atau The Ordinary Salicylic Acid 2% Masque
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soothing Night Routine -->
+            <div class="night-routine-content" id="soothing">
+              <div class="night-routine-header">
+                <div class="night-routine-icon">
+                  <img src="img/soothing-icon.png" alt="Menenangkan" />
+                </div>
+                <div class="night-routine-title">
+                  <h4>Malam Menenangkan</h4>
+                  <p>
+                    Rutinitas malam untuk kulit sensitif, kemerahan, atau
+                    iritasi yang membutuhkan ketenangan
+                  </p>
+                </div>
+              </div>
+
+              <div class="night-routine-steps">
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Gentle Cleansing</h5>
+                    <p>
+                      Gunakan cleanser ultra-lembut tanpa sulfat, fragrance dan
+                      bahan iritan lainnya.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Vanicream Gentle Facial Cleanser
+                      atau La Roche-Posay Toleriane Hydrating Gentle Cleanser
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Thermal Water Spray (Opsional)</h5>
+                    <p>
+                      Semprotkan thermal water untuk menenangkan kulit yang
+                      sensitif dan kemerahan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Avène Thermal Spring Water atau
+                      La Roche-Posay Thermal Spring Water
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Calming Toner</h5>
+                    <p>
+                      Aplikasikan toner bebas alkohol dengan bahan
+                      anti-inflamasi dan penenang seperti centella, panthenol,
+                      atau madecassoside.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Etude House SoonJung pH 5.5
+                      Relief Toner atau Klairs Supple Preparation Unscented
+                      Toner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Soothing Essence</h5>
+                    <p>
+                      Tambahkan essence dengan bahan penenang seperti aloe vera,
+                      green tea, atau snail mucin.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Benton Aloe Propolis Soothing Gel
+                      atau PURITO Centella Green Level Buffet Serum
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Ceramide Serum</h5>
+                    <p>
+                      Aplikasikan serum dengan ceramide, cholesterol, dan fatty
+                      acid untuk memperbaiki skin barrier.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Vanicream Gentle Facial Cleanser
+                      atau La Roche-Posay Toleriane Hydrating Gentle Cleanser
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Thermal Water Spray (Opsional)</h5>
+                    <p>
+                      Semprotkan thermal water untuk menenangkan kulit yang
+                      sensitif dan kemerahan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Avène Thermal Spring Water atau
+                      La Roche-Posay Thermal Spring Water
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Calming Toner</h5>
+                    <p>
+                      Aplikasikan toner bebas alkohol dengan bahan
+                      anti-inflamasi dan penenang seperti centella, panthenol,
+                      atau madecassoside.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Etude House SoonJung pH 5.5
+                      Relief Toner atau Klairs Supple Preparation Unscented
+                      Toner
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Soothing Essence</h5>
+                    <p>
+                      Tambahkan essence dengan bahan penenang seperti aloe vera,
+                      green tea, atau snail mucin.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Benton Aloe Propolis Soothing Gel
+                      atau PURITO Centella Green Level Buffet Serum
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Ceramide Serum</h5>
+                    <p>
+                      Aplikasikan serum dengan ceramide, cholesterol, dan fatty
+                      acid untuk memperbaiki skin barrier.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Dr. Jart+ Ceramidin Serum atau
+                      Stratia Liquid Gold
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Cica Treatment</h5>
+                    <p>
+                      Gunakan produk berbasis centella asiatica (cica) untuk
+                      meredakan kemerahan dan iritasi.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Dr. Jart+ Cicapair Tiger Grass
+                      Cream atau La Roche-Posay Cicaplast Baume B5
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Barrier Repair Moisturizer</h5>
+                    <p>
+                      Aplikasikan pelembab yang fokus pada perbaikan skin
+                      barrier dengan minimal bahan iritan.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> Soon Jung 2x Barrier Intensive
+                      Cream atau First Aid Beauty Ultra Repair Cream
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Occlusive (Opsional)</h5>
+                    <p>
+                      Untuk area yang sangat kering atau iritasi, tambahkan
+                      lapisan tipis occlusive untuk melindungi kulit.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> CeraVe Healing Ointment atau
+                      Aquaphor Healing Ointment
+                    </div>
+                  </div>
+                </div>
+
+                <div class="night-step">
+                  <div class="night-step-number"></div>
+                  <div class="night-step-content">
+                    <h5>Overnight Mask (1-2x seminggu)</h5>
+                    <p>
+                      Gunakan masker dengan bahan anti-inflamasi dan penyembuh
+                      seperti mugwort, panthenol, atau madecassoside.
+                    </p>
+                    <div class="product-suggestion">
+                      <strong>Produk:</strong> I'm From Mugwort Mask atau Cicago
+                      Cica Double Effect Sleeping Pack
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <script>
-      // Fungsi untuk menangani tab Jenis Kulit
-      document.querySelectorAll(".skin-type-tab").forEach((button) => {
-        button.addEventListener("click", () => {
-          // Menghapus kelas active dari semua tab
-          document.querySelectorAll(".skin-type-tab").forEach((tab) => {
-            tab.classList.remove("active");
-          });
-          // Menghapus kelas active dari semua konten
-          document.querySelectorAll(".skin-type-content").forEach((content) => {
-            content.classList.remove("active");
-          });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skin Type Tabs
+            const skinTypeTabs = document.querySelectorAll('.skin-type-tab');
+            const skinTypeContents = document.querySelectorAll('.skin-type-content');
 
-          // Menambahkan kelas active ke tab yang diklik
-          button.classList.add("active");
-          // Menampilkan konten yang sesuai
-          const targetId = button.getAttribute("data-target");
-          document.getElementById(targetId).classList.add("active");
-        });
-      });
+            skinTypeTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Hapus kelas active dari semua tab
+                    skinTypeTabs.forEach(t => t.classList.remove('active'));
+                    skinTypeContents.forEach(content => content.classList.remove('active'));
 
-      // Fungsi untuk menangani tab AM/PM Skincare
-      document.querySelectorAll(".am-pm-tab").forEach((button) => {
-        button.addEventListener("click", () => {
-          const targetTime = button.getAttribute("data-time");
-
-          // Menghapus kelas active dari semua tab
-          document.querySelectorAll(".am-pm-tab").forEach((tab) => {
-            tab.classList.remove("active");
-          });
-          // Menghapus kelas active dari semua konten
-          document.querySelectorAll(".routine-content").forEach((content) => {
-            content.classList.remove("active");
-          });
-
-          // Menambahkan kelas active
-          button.classList.add("active");
-          document
-            .querySelector(`.routine-content[data-time="${targetTime}"]`)
-            .classList.add("active");
-        });
-      });
-
-      // Fungsi untuk menangani Night Treatment Routines
-      document.querySelectorAll(".routine-tab").forEach((button) => {
-        button.addEventListener("click", () => {
-          const targetRoutine = button.getAttribute("data-routine");
-
-          // Menghapus kelas active dari semua tab
-          document.querySelectorAll(".routine-tab").forEach((tab) => {
-            tab.classList.remove("active");
-          });
-          // Menghapus kelas active dari semua konten
-          document
-            .querySelectorAll(".night-routine-content")
-            .forEach((content) => {
-              content.classList.remove("active");
+                    // Tambah kelas active ke tab yang diklik
+                    tab.classList.add('active');
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
             });
 
-          // Menambahkan kelas active
-          button.classList.add("active");
-          document
-            .querySelector(
-              `.night-routine-content[data-routine="${targetRoutine}"]`
-            )
-            .classList.add("active");
+            // AM/PM Routine Tabs
+            const amPmTabs = document.querySelectorAll('.am-pm-tab');
+            const routineContents = document.querySelectorAll('.routine-content');
+
+            amPmTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    amPmTabs.forEach(t => t.classList.remove('active'));
+                    routineContents.forEach(content => content.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Night Routine Tabs
+            const routineTabs = document.querySelectorAll('.routine-tab');
+            const nightRoutineContents = document.querySelectorAll('.night-routine-content');
+
+            routineTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    routineTabs.forEach(t => t.classList.remove('active'));
+                    nightRoutineContents.forEach(content => content.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
         });
-      });
     </script>
   </body>
 </html>
+
+
