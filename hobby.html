@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby - Nadya's Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Hobby Page Specific Styles */
+        .hobby-section {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            background-color: #FAF3E6;
+            min-height: 100vh;
+        }
+        
+        .hobby-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 50px;
+        }
+        
+        .skincare-blog {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Skin Type Section */
+        .skin-types-section {
+            background-color: #FFF;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            border: 2px solid rgba(206, 185, 163, 0.3);
+        }
+        
+        .skin-types-section h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #5E4B3E;
+            margin-bottom: 20px;
+        }
+        
+        .skin-types-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skin-type-tab {
+            padding: 10px 20px;
+            background-color: #F1DCC5;
+            color: #5E4B3E;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .skin-type-tab:hover, .skin-type-tab.active {
+            background-color: #F29A86;
+            color: #FFF;
+        }
+        
+        .skin-type-content {
+            display: none;
+            padding: 20px;
+            background-color: #FEF9F3;
+            border-radius: 10px;
+        }
+        
+        .skin-type-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .skin-type-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #5E4B3E;
+            margin-bottom: 10px;
+        }
+        
+        .skin-type-description {
+            margin-bottom: 15px;
+            color: #7D7165;
+            line-height: 1.6;
+        }
+        
+        .recommended-steps {
+            margin-top: 20px;
+        }
+        
+        .recommended-steps h4 {
+            font-size: 1.1rem;
+            color: #F29A86;
+            margin-bottom: 10px;
+        }
+        
+        .step-list {
+            padding-left: 20px;
+        }
+        
+        .step-list li {
+            margin-bottom: 8px;
+            color: #7D7165;
+        }
+        
+        /* Basic Skincare Section */
+        .basic-skincare {
+            background-color: #FFF;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            border: 2px solid rgba(206, 185, 163, 0.3);
+        }
+        
+        .basic-skincare h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #5E4B3E;
+            margin-bottom: 20px;
+        }
+        
+        .am-pm-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .am-pm-tab {
+            padding: 10px 30px;
+            background-color: #F1DCC5;
+            color: #5E4B3E;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .am-pm-tab:first-child {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        
+        .am-pm-tab:last-child {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .am-pm-tab:hover, .am-pm-tab.active {
+            background-color: #F29A86;
+            color: #FFF;
+        }
+        
+        .routine-content {
+            display: none;
+        }
+        
+        .routine-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .routine-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .routine-card {
+            background-color: #FEF9F3;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .routine-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .routine-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            background-color: #F1DCC5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .routine-icon img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+        
+        .routine-card h4 {
+            font-size: 1.1rem;
+            color: #5E4B3E;
+            margin-bottom: 8px;
+        }
+        
+        .routine-card p {
+            font-size: 0.9rem;
+            color: #7D7165;
+        }
+        
+        /* Night Routines Section */
+        .night-routines {
+            margin-bottom: 40px;
+        }
+        
+        .night-routines h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #5E4B3E;
+            margin-bottom: 30px;
+        }
+        
+        .routines-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .routine-tab {
+            padding: 8px 16px;
+            background-color: #F1DCC5;
+            color: #5E4B3E;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .routine-tab:hover, .routine-tab.active {
+            background-color: #F29A86;
+            color: #FFF;
+        }
+        
+        .night-routine-content {
+            display: none;
+        }
+        
+        .night-routine-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+            background-color: #FFF;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 2px solid rgba(206, 185, 163, 0.3);
+        }
+        
+        .night-routine-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .night-routine-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #F1DCC5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        
+        .night-routine-icon img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+        
+        .night-routine-title {
+            flex: 1;
+        }
+        
+        .night-routine-title h4 {
+            font-size: 1.4rem;
+            color: #5E4B3E;
+            margin-bottom: 5px;
+        }
+        
+        .night-routine-title p {
+            font-size: 0.9rem;
+            color: #7D7165;
+        }
+        
+        .night-routine-steps {
+            counter-reset: step-counter;
+        }
+        
+        .night-step {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .night-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 45px;
+            left: 20px;
+            width: 2px;
+            height: calc(100% - 30px);
+            background-color: #F1DCC5;
+        }
+        
+        .night-step-number {
+            width: 40px;
+            height: 40px;
+            background-color: #F29A86;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFF;
+            font-weight: 600;
+            margin-right: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .night-step-number::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+        }
+        
+        .night-step-content {
+            flex: 1;
+        }
+        
+        .night-step-content h5 {
+            font-size: 1.1rem;
+            color: #5E4B3E;
+            margin-bottom: 5px;
+        }
+        
+        .night-step-content p {
+            font-size: 0.9rem;
+            color: #7D7165;
+            margin-bottom: 10px;
+        }
+        
+        .product-suggestion {
+            background-color: #FEF9F3;
+            border-radius: 8px;
+            padding: 10px;
+            display: inline-block;
+        }
+        
+        .product-suggestion strong {
+            color: #F29A86;
+        }
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .routine-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .night-step {
+                flex-direction: column;
+            }
+            
+            .night-step-number {
+                margin-bottom: 10px;
+            }
+            
+            .night-step:not(:last-child)::after {
+                left: 20px;
+                top: 40px;
+                height: calc(100% - 20px);
+            }
+        }
+        
+        /* JavaScript styling additions */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>NADYA</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li class="active"><a href="hobby.html">Hobby</a></li>
+                        <li><a href="portofolio.html">Portofolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hobby Section -->
+    <section class="hobby-section">
+        <div class="container">
+            <h2 class="hobby-title">Skincare Blog</h2>
+            
+            <div class="skincare-blog">
+                <!-- Skin Types Section -->
+                <div class="skin-types-section">
+                    <h3>Kenali Jenis Kulitmu</h3>
+                    
+                    <div class="skin-types-tabs">
+                        <button class="skin-type-tab active" data-target="normal">Normal</button>
+                        <button class="skin-type-tab" data-target="kering">Kering</button>
+                        <button class="skin-type-tab" data-target="berminyak">Berminyak</button>
+                        <button class="skin-type-tab" data-target="kombinasi">Kombinasi</button>
+                        <button class="skin-type-tab" data-target="sensitif">Sensitif</button>
+                        <button class="skin-type-tab" data-target="berjerawat">Berjerawat</button>
+                    </div>
+                    
+                    <div class="skin-type-content active" id="normal">
+                        <div class="skin-type-heading">Kulit Normal</div>
+                        <div class="skin-type-description">
+                            Kulit normal memiliki keseimbangan sempurna antara minyak dan kelembaban. Pori-pori hampir tidak terlihat, tekstur kulitnya halus, dan jarang mengalami masalah kulit seperti komedo atau jerawat. Kulit normal memiliki warna yang merata dan terasa nyaman sepanjang hari.
+                        </div>
+                        <div class="recommended-steps">
+                            <h4>Rekomendasi Perawatan:</h4>
+                            <ul class="step-list">
+                                <li>Gunakan cleanser dengan pH seimbang</li>
+                                <li>Hydrating toner untuk menjaga kelembaban</li>
+                                <li>Serum antioksidan seperti Vitamin C</li>
+                                <li>Pelembab ringan dengan tekstur gel atau lotion</li>
+                                <li>Sunscreen minimal SPF 30 setiap hari</li>
+                                <li>Exfoliate 1-2 kali seminggu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="skin-type-content" id="kering">
+                        <div class="skin-type-heading">Kulit Kering</div>
+                        <div class="skin-type-description">
+                            Kulit kering cenderung terasa kaku, kasar, dan mudah mengelupas. Kurangnya sebum menyebabkan kulit tidak memiliki cukup pelindung alami untuk menahan kelembaban. Kulit kering sering terasa gatal, kasar, dan dapat muncul bercak-bercak merah terutama setelah mandi atau terpapar udara dingin.
+                        </div>
+                        <div class="recommended-steps">
+                            <h4>Rekomendasi Perawatan:</h4>
+                            <ul class="step-list">
+                                <li>Gunakan cleanser cream atau oil-based yang tidak membuat kulit tambah kering</li>
+                                <li>Toner yang mengandung hyaluronic acid atau glycerin</li>
+                                <li>Serum dengan kandungan hyaluronic acid dan ceramide</li>
+                                <li>Pelembab yang kaya (cream/butter) dengan kandungan shea butter atau squalane</li>
+                                <li>Face oil seperti jojoba oil atau rosehip oil</li>
+                                <li>Gunakan sleeping mask 2-3 kali seminggu</li>
+                                <li>Hindari exfoliasi yang terlalu sering (max 1x seminggu)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="skin-type-content" id="berminyak">
+                        <div class="skin-type-heading">Kulit Berminyak</div>
+                        <div class="skin-type-description">
+                            Kulit berminyak ditandai dengan produksi sebum yang berlebihan. Wajah tampak mengkilap terutama di zona T (dahi, hidung, dagu), pori-pori terlihat lebih besar, dan sering terbentuk komedo atau jerawat. Meskipun terlihat kurang ideal, kulit berminyak memiliki keuntungan yaitu lebih lambat timbul keriput dan tanda penuaan.
+                        </div>
+                        <div class="recommended-steps">
+                            <h4>Rekomendasi Perawatan:</h4>
+                            <ul class="step-list">
+                                <li>Gunakan gel atau foam cleanser dengan kandungan salicylic acid</li>
+                                <li>Toner tanpa alkohol dengan BHA untuk mengontrol minyak</li>
+                                <li>Serum ringan dengan niacinamide untuk mengatur produksi sebum</li>
+                                <li>Pelembab water-based atau gel-based</li>
+                                <li>Sunscreen berbasis air dengan finish matte</li>
+                                <li>Exfoliate dengan BHA 2-3 kali seminggu</li>
+                                <li>Gunakan clay mask 1-2 kali seminggu untuk menyerap minyak berlebih</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="skin-type-content" id="kombinasi">
+                        <div class="skin-type-heading">Kulit Kombinasi</div>
+                        <div class="skin-type-description">
+                            Kulit kombinasi memiliki area berminyak (biasanya di zona T) dan area kering atau normal di bagian lainnya (pipi). Kulit jenis ini membutuhkan pendekatan yang berbeda untuk masing-masing area karena memiliki karakteristik yang berbeda pada satu wajah.
+                        </div>
+                        <div class="recommended-steps">
+                            <h4>Rekomendasi Perawatan:</h4>
+                            <ul class="step-list">
+                                <li>Gunakan cleanser dengan pH seimbang yang tidak terlalu keras</li>
+                                <li>Toner hydrating untuk seluruh wajah</li>
+                                <li>Serum dengan niacinamide yang dapat mengatur sebum dan lembabkan kulit</li>
+                                <li>Gel moisturizer untuk zona T dan cream moisturizer untuk area kering</li>
+                                <li>Multi-masking: clay mask untuk zona T dan hydrating mask untuk area kering</li>
+                                <li>Exfoliate dengan AHA/BHA 1-2 kali seminggu</li>
+                                <li>Sunscreen dengan finish semi-matte</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="skin-type-content" id="sensitif">
+                        <div class="skin-type-heading">Kulit Sensitif</div>
+                        <div class="skin-type-description">
+                            Kulit sensitif mudah bereaksi terhadap faktor eksternal seperti cuaca, polusi, atau bahan-bahan dalam skincare. Gejala umum termasuk kemerahan, gatal, terbakar, atau rasa tertusuk. Kulit sensitif membutuhkan produk yang lembut dan tidak mengandung bahan iritan.
+                        </div>
+                        <div class="recommended-steps">
+                            <h4>Rekomendasi Perawatan:</h4>
+                            <ul class="step-list">
+                                <li>Gunakan cleanser lembut tanpa SLS dan fragrance</li>
+                                <li>Toner tanpa alkohol dan fragrance dengan kandungan centella asiatica</li>
+                                <li>Serum yang menenangkan dengan aloe vera atau centella asiatica</li>
+                                <li>Pelembab formulasi minimal yang fokus pada barrier repair (ceramide)</li>
+                                <li>Physical sunscreen (mineral) daripada chemical sunscreen</li>
+                                <li>Hindari exfoliasi fisik, pilih exfoliant PHA yang lembut (max 1x seminggu)</li>
+                                <li>Patch test selalu untuk produk baru</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="skin-type-content" id="berjerawat">
+                        <div class="skin-type-heading">Kulit Berjerawat</div>
+                        <div class="skin-type-description">
+                            Kulit berjerawat ditandai dengan adanya peradangan berupa papula, pustula, kista, atau nodul. Jenis kulit ini dapat dialami oleh semua orang dengan jenis kulit dasar apapun (berminyak, kering, atau kombinasi). Kulit berjerawat membutuhkan perawatan khusus untuk mengatasi bakteri penyebab jerawat dan mengurangi peradangan.
+                        </div>
+                        <div class="recommended-steps">
+                            <h4>Rekomendasi Perawatan:</h4>
+                            <ul class="step-list">
+                                <li>Gunakan cleanser dengan benzoyl peroxide atau salicylic acid</li>
+                                <li>Toner antibakteri yang mengandung tea tree oil atau witch hazel</li>
+                                <li>Serum dengan niacinamide atau azelaic acid untuk mengurangi peradangan</li>
+                                <li>Spot treatment dengan benzoyl peroxide atau tea tree oil</li>
+                                <li>Pelembab non-comedogenic dan oil-free</li>
+                                <li>Sunscreen berbasis mineral yang tidak menyumbat pori</li>
+                                <li>Exfoliate dengan BHA (salicylic acid) 2 kali seminggu</li>
+                                <li>Hindari menyentuh wajah dan rutin ganti sarung bantal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Basic Skincare Section -->
+                <div class="basic-skincare">
+                    <h3>Basic Skincare Untuk Semua Jenis Kulit</h3>
+                    
+                    <div class="am-pm-tabs">
+                        <button class="am-pm-tab active" data-target="am-routine">AM Routine</button>
+                        <button class="am-pm-tab" data-target="pm-routine">PM Routine</button>
+                    </div>
+                    
+                    <div class="routine-content active" id="am-routine">
+                        <div class="routine-grid">
+                            <!-- Step 1 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/cleanser-icon.png" alt="Cleanser">
+                                </div>
+                                <h4>1. Cuci Muka</h4>
+                                <p>Gunakan cleanser lembut berbasis gel atau foam untuk membersihkan kulit dari sebum yang diproduksi saat tidur.</p>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/toner-icon.png" alt="Toner">
+                                </div>
+                                <h4>2. Toner</h4>
+                                <p>Gunakan toner untuk menyeimbangkan pH kulit dan memberikan hidrasi awal setelah mencuci muka.</p>
+                            </div>
+                            
+                            <!-- Step 3 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/serum-icon.png" alt="Serum">
+                                </div>
+                                <h4>3. Serum Antioksidan</h4>
+                                <p>Vitamin C adalah antioksidan yang cocok digunakan pagi hari untuk melindungi kulit dari radikal bebas.</p>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/eye-cream-icon.png" alt="Eye Cream">
+                                </div>
+                                <h4>4. Eye Cream</h4>
+                                <p>Aplikasikan eye cream untuk menjaga kelembaban dan melindungi area sensitif di sekitar mata.</p>
+                            </div>
+                            
+                            <!-- Step 5 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/moisturizer-icon.png" alt="Moisturizer">
+                                </div>
+                                <h4>5. Pelembab</h4>
+                                <p>Gunakan pelembab untuk mengunci kelembaban dan menjaga skin barrier sepanjang hari.</p>
+                            </div>
+                            
+                            <!-- Step 6 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/spf-icon.png" alt="SPF">
+                                </div>
+                                <h4>6. Sunscreen</h4>
+                                <p>Wajib! Gunakan minimal SPF 30 dan reapply setiap 2-3 jam jika beraktivitas di luar ruangan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="routine-content" id="pm-routine">
+                        <div class="routine-grid">
+                            <!-- Step 1 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/cleansing-oil-icon.png" alt="Cleansing Oil">
+                                </div>
+                                <h4>1. First Cleanse</h4>
+                                <p>Gunakan cleansing oil/balm/micellar water untuk menghapus makeup, sunscreen, dan kotoran berminyak.</p>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/cleanser-icon.png" alt="Water-based Cleanser">
+                                </div>
+                                <h4>2. Second Cleanse</h4>
+                                <p>Gunakan cleanser berbasis air untuk membersihkan sisa kotoran dan product residue.</p>
+                            </div>
+                            
+                            <!-- Step 3 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/exfoliate-icon.png" alt="Exfoliate">
+                                </div>
+                                <h4>3. Exfoliate (Opsional)</h4>
+                                <p>1-3x seminggu, gunakan chemical exfoliant (AHA/BHA/PHA) sesuai jenis kulit.</p>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/toner-icon.png" alt="Toner">
+                                </div>
+                                <h4>4. Toner</h4>
+                                <p>Aplikasikan toner untuk menyeimbangkan pH dan memberikan lapisan hidrasi pertama.</p>
+                            </div>
+                            
+                            <!-- Step 5 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/serum-icon.png" alt="Treatment">
+                                </div>
+                                <h4>5. Treatment</h4>
+                                <p>Gunakan serum aktif sesuai concern kulit (misal: retinol, niacinamide, peptides).</p>
+                            </div>
+                            
+                            <!-- Step 6 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/eye-cream-icon.png" alt="Eye Cream">
+                                </div>
+                                <h4>6. Eye Cream</h4>
+                                <p>Aplikasikan eye cream dengan lembut di area sekitar mata.</p>
+                            </div>
+                            
+                            <!-- Step 7 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/moisturizer-icon.png" alt="Moisturizer">
+                                </div>
+                                <h4>7. Pelembab</h4>
+                                <p>Gunakan pelembab yang lebih rich untuk menjaga kelembaban dan memperbaiki skin barrier selama tidur.</p>
+                            </div>
+                            
+                            <!-- Step 8 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/oil-icon.png" alt="Face Oil">
+                                </div>
+                                <h4>8. Face Oil (Opsional)</h4>
+                                <p>Tambahkan face oil sebagai lapisan terakhir untuk mengunci semua kandungan aktif dan kelembaban.</p>
+                            </div>
+                            
+                            <!-- Step 9 -->
+                            <div class="routine-card">
+                                <div class="routine-icon">
+                                    <img src="img/mask-icon.png" alt="Sleeping Mask">
+                                </div>
+                                <h4>9. Sleeping Mask (Opsional)</h4>
+                                <p>1-2x seminggu, gunakan sleeping mask untuk tambahan nutrisi dan kelembaban.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Night Routines Section -->
+                <div class="night-routines">
+                    <h3>Spesial Night Treatment Routines</h3>
+                    
+                    <div class="routines-tabs">
+                        <button class="routine-tab active" data-target="brightening">Malam Pencerah</button>
+                        <button class="routine-tab" data-target="retinol">Malam Retinol</button>
+                        <button class="routine-tab" data-target="hydrating">Malam Hydrating</button>
+                        <button class="routine-tab" data-target="moisturizing">Malam Moisturizing</button>
+                        <button class="routine-tab" data-target="vitc">Malam Vitamin C</button>
+                        <button class="routine-tab" data-target="niacinamide">Malam Niacinamide</button>
+                        <button class="routine-tab" data-target="antiaging">Malam Anti-Aging</button>
+                        <button class="routine-tab" data-target="acne">Malam Anti-Jerawat</button>
+                        <button class="routine-tab" data-target="soothing">Malam Menenangkan</button>
+                    </div>
+                    
+                    <!-- Brightening Night Routine -->
+                    <div class="night-routine-content active" id="brightening">
+                        <div class="night-routine-header">
+                            <div class="night-routine-icon">
+                                <img src="img/brightness-icon.png" alt="Brightening">
+                            </div>
+                            <div class="night-routine-title">
+                                <h4>Malam Pencerah</h4>
+                                <p>Rutinitas malam untuk mencerahkan kulit kusam dan menyamarkan hiperpigmentasi</p>
+                            </div>
+                        </div>
+                        
+                        <div class="night-routine-steps">
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Double Cleansing</h5>
+                                    <p>Awali dengan oil cleanser untuk mengangkat makeup dan sunscreen, lalu lanjutkan dengan water-based cleanser untuk membersihkan sisa kotoran.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Banila Co Clean it Zero + Cosrx Low pH Good Morning Gel Cleanser
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Exfoliate (2-3x seminggu)</h5>
+                                    <p>Gunakan AHA untuk mengangkat sel kulit mati dan membantu mencerahkan kulit. Glycolic Acid atau Lactic Acid adalah pilihan yang bagus.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> The Ordinary Glycolic Acid 7% Toning Solution atau COSRX AHA 7 Whitehead Power Liquid
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>First Treatment Essence</h5>
+                                    <p>Aplikasikan essence dengan kandungan fermentasi untuk mencerahkan kulit dan meningkatkan penyerapan produk selanjutnya.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> SK-II Facial Treatment Essence atau Missha Time Revolution First Treatment Essence
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Brightening Toner</h5>
+                                    <p>Gunakan toner dengan kandungan pencerah seperti licorice root extract, arbutin, atau tranexamic acid.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Hada Labo Shirojyun Premium Whitening Lotion atau Some By Mi Yuja Niacin Brightening Toner
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Brightening Serum</h5>
+                                    <p>Aplikasikan serum dengan kandungan alpha arbutin, tranexamic acid, atau niacinamide yang efektif mencerahkan dan menyamarkan hiperpigmentasi.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> The Ordinary Alpha Arbutin 2% + HA atau Good Molecules Discoloration Correcting Serum
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Spot Treatment</h5>
+                                    <p>Aplikasikan produk khusus untuk area dengan hiperpigmentasi yang membandel.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Rohto Melano CC Intensive Anti-Spot Essence atau Everwhite Spot Eraser
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Pelembab</h5>
+                                    <p>Gunakan pelembab dengan tambahan bahan pencerah namun tetap menjaga kelembaban kulit.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Laneige White Dew Cream atau Hada Labo Shirojyun Premium Whitening Cream
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Sleeping Mask (1-2x seminggu)</h5>
+                                    <p>Gunakan sleeping mask dengan formula pencerah untuk treatment ekstra saat tidur.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Laneige White Dew Sleeping Mask atau Sulwhasoo Snowise Brightening Mask
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Retinol Night Routine -->
+                    <div class="night-routine-content" id="retinol">
+                        <div class="night-routine-header">
+                            <div class="night-routine-icon">
+                                <img src="img/retinol-icon.png" alt="Retinol">
+                            </div>
+                            <div class="night-routine-title">
+                                <h4>Malam Retinol</h4>
+                                <p>Rutinitas malam dengan fokus anti-aging dan regenerasi sel kulit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="night-routine-steps">
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Double Cleansing</h5>
+                                    <p>Bersihkan wajah dengan menyeluruh menggunakan oil cleanser dilanjutkan dengan gentle face wash.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Heimish All Clean Balm + La Roche-Posay Toleriane Hydrating Gentle Cleanser
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Hydrating Toner</h5>
+                                    <p>Gunakan toner yang lembut dan melembabkan untuk persiapan lapisan dasar hidrasi yang baik.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Klairs Supple Preparation Unscented Toner atau Hada Labo Gokujyun Premium Hyaluronic Acid Lotion
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Buffer (Opsional untuk pemula)</h5>
+                                    <p>Untuk kulit sensitif atau pemula retinol, aplikasikan serum/essence ringan sebagai buffer untuk mengurangi iritasi.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> COSRX Snail 96 Mucin Power Essence atau Purito Centella Unscented Serum
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Retinol Treatment</h5>
+                                    <p>Aplikasikan retinol/retinoid pada wajah kering, hindari area sensitif seperti sudut mata, hidung, dan mulut. Mulai dengan konsentrasi rendah (0.2-0.3%) dan frekuensi 1-2x seminggu, lalu tingkatkan perlahan.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> The Ordinary Retinol 0.2% in Squalane, The Inkey List Retinol, atau Paula's Choice 1% Retinol Treatment
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Tunggu 20 Menit</h5>
+                                    <p>Biarkan retinol terserap sempurna selama minimal 20 menit sebelum melanjutkan ke langkah berikutnya.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Peptide Serum (Opsional)</h5>
+                                    <p>Tambahkan serum peptide untuk efek anti-aging yang sinergis dengan retinol (tidak wajib).</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> The Ordinary Buffet atau NIOD Multi-Molecular Hyaluronic Complex
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Pelembab</h5>
+                                    <p>Aplikasikan pelembab yang fokus pada memperbaiki skin barrier untuk meminimalisir efek kering dari retinol.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> CeraVe Moisturizing Cream atau La Roche-Posay Cicaplast Baume B5
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Occlusive (Opsional)</h5>
+                                    <p>Untuk kulit kering, tambahkan lapisan occlusive tipis untuk mengunci kelembaban dan mengurangi TEWL (Trans Epidermal Water Loss).</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Vaseline (petroleum jelly) tipis atau Aquaphor Healing Ointment
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hydrating Night Routine -->
+                    <div class="night-routine-content" id="hydrating">
+                        <div class="night-routine-header">
+                            <div class="night-routine-icon">
+                                <img src="img/hydrating-icon.png" alt="Hydrating">
+                            </div>
+                            <div class="night-routine-title">
+                                <h4>Malam Hydrating</h4>
+                                <p>Rutinitas malam untuk menutrisi kulit dehidrasi dengan multi-layer hydration</p>
+                            </div>
+                        </div>
+                        
+                        <div class="night-routine-steps">
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Cleansing</h5>
+                                    <p>Bersihkan wajah dengan cleanser lembut non-stripping yang tidak menghilangkan kelembaban alami kulit.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Fresh Soy Face Cleanser atau Cetaphil Gentle Skin Cleanser
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Hydrating Toner</h5>
+                                    <p>Aplikasikan toner dengan kandungan hyaluronic acid menggunakan metode 7-skin (7 lapisan tipis toner) atau minimal 3 lapisan.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> Laneige Cream Skin Refiner atau Hada Labo Gokujyun Premium Hyaluronic Acid Lotion
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Essence</h5>
+                                    <p>Tambahkan essence yang kaya akan humectant untuk lapisan hidrasi tambahan.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> COSRX Snail 96 Mucin Power Essence atau Missha Time Revolution First Treatment Essence
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="night-step">
+                                <div class="night-step-number"></div>
+                                <div class="night-step-content">
+                                    <h5>Hyaluronic Acid Serum</h5>
+                                    <p>Aplikasikan serum hyaluronic acid yang dapat mengikat kelembaban hingga 1000x berat molekulnya ke dalam kulit.</p>
+                                    <div class="product-suggestion">
+                                        <strong>Produk:</strong> The Ordinary Hyaluronic Acid 2% + B5 atau Vichy Minéral 89 Hyaluronic Acid Serum
+                                    </div>
